@@ -16,6 +16,10 @@
         <mysql.jdbc.version>5.1.30</mysql.jdbc.version>
         <commons.dbcp.version>1.4</commons.dbcp.version>
         <guava.version>18.0</guava.version>
+        <commons.fileupload.version>1.3.1</commons.fileupload.version>
+        <commons.io.version>2.4</commons.io.version>
+        <commons.lang3.version>3.3.2</commons.lang3.version>
+        <commons.collections4.version>4.0</commons.collections4.version>
     </properties>
     <dependencies>
         <dependency>
@@ -110,11 +114,32 @@
             <version>${commons.dbcp.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>${commons.fileupload.version}</version>
+        </dependency>
+
         <!-- util -->
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>${guava.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons.lang3.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>${commons.collections4.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons.io.version}</version>
         </dependency>
 
     </dependencies>

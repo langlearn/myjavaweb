@@ -46,4 +46,7 @@ public class HomeController {
         return testService.query();
     }
 
+    @RequestMapping({"/upload"})
+    public void views(){}
+
 }
