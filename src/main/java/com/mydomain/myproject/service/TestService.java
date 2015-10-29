@@ -17,7 +17,7 @@ public class TestService {
     private TestDao testDao;
 
     public Map<String, Object> query() {
-        List<Map<String,Object>> data=testDao.query();
+        List<Map<String, Object>> data = testDao.query();
         return ImmutableMap.of("success", true, "data", data);
     }
 }

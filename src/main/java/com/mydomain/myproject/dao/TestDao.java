@@ -15,8 +15,8 @@ public class TestDao {
     @Resource
     private JdbcTemplate jdbcTemplate;
 
-    public List<Map<String,Object>> query(){
-        String sql="select * from test";
+    public List<Map<String, Object>> query() {
+        String sql = "select * from test";
         return jdbcTemplate.queryForList(sql);
     }
 }

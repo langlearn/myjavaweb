@@ -26,14 +26,14 @@ public class FileController {
 
     @RequestMapping("download")
     public ResponseEntity<byte[]> downloadFile() throws IOException {
-        HttpHeaders headers=new HttpHeaders();
+        HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
         headers.setContentDispositionFormData("attachment", "dict.txt");
-        return new ResponseEntity<byte[]>(FileUtils.readFileToByteArray(File.createTempFile("temp",".txt"))
-                ,headers, HttpStatus.CREATED);
+        return new ResponseEntity<byte[]>(FileUtils.readFileToByteArray(File.createTempFile("temp", ".txt"))
+                , headers, HttpStatus.CREATED);
     }
 
-    @RequestMapping(value = "upload",method = RequestMethod.POST)
+    @RequestMapping(value = "upload", method = RequestMethod.POST)
     @ResponseBody
     public Map upload(@RequestParam("file") MultipartFile file) throws Exception {
         if (!file.isEmpty()) {
@@ -41,8 +41,8 @@ public class FileController {
             System.out.println(file.getContentType());
             System.out.println(file.getBytes());
             return ImmutableMap.of("success", true);
-        }else {
-            return ImmutableMap.of("success", false,"msg", "请选择一个文件");
+        } else {
+            return ImmutableMap.of("success", false, "msg", "请选择一个文件");
         }
     }
 }

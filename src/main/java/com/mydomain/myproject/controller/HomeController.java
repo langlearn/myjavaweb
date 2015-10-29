@@ -25,38 +25,39 @@ public class HomeController {
     @Resource
     private UserService userService;
 
-    @RequestMapping({"/home","/"})
-    public String home(){
+    @RequestMapping({"/home", "/"})
+    public String home() {
         return "home";
     }
 
     @RequestMapping({"/config"})
     @ResponseBody
-    public ConfigInfo config(){
+    public ConfigInfo config() {
         return configInfo;
     }
 
     @RequestMapping({"/json/map"})
     @ResponseBody
-    public Map<String,Object> jsonMap(){
-        Map<String,Object> result=new HashMap<String, Object>();
-        result.put("a",1);
-        result.put("b",2);
+    public Map<String, Object> jsonMap() {
+        Map<String, Object> result = new HashMap<String, Object>();
+        result.put("a", 1);
+        result.put("b", 2);
         return result;
     }
 
     @RequestMapping({"/json/list"})
     @ResponseBody
-    public Map<String,Object> list(){
+    public Map<String, Object> list() {
         return testService.query();
     }
 
     @RequestMapping({"/upload"})
-    public void views(){}
+    public void views() {
+    }
 
     @RequestMapping({"/user/{id}"})
     @ResponseBody
-    public User getUser(@PathVariable int id){
+    public User getUser(@PathVariable int id) {
         return userService.get(id);
     }
 

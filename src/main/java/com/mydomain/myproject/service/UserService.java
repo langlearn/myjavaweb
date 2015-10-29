@@ -14,7 +14,8 @@ public class UserService {
     @Resource
     private UserMapper userMapper;
 
-    public User get(int id){
-        return userMapper.getUser(id);
+    public User get(int id) {
+        User user = userMapper.getUser(id);
+        return user;
     }
 }

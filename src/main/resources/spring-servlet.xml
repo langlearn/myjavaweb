@@ -62,10 +62,12 @@
     </bean>
 
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-        <property name="dataSource" ref="dataSource" />
+        <property name="dataSource" ref="dataSource"/>
+        <property name="mapperLocations" value="classpath*:com/mydomain/myproject/**/*.xml"/>
+        <property name="typeAliasesPackage" value="com.mydomain.myproject.modal,com.mydomain.myproject.dao"/>
     </bean>
-    <bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
-        <property name="mapperInterface" value="com.mydomain.myproject.dao.UserMapper" />
-        <property name="sqlSessionFactory" ref="sqlSessionFactory" />
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.mydomain.myproject.dao"/>
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>
 </beans>
