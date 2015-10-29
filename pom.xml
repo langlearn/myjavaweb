@@ -21,6 +21,8 @@
         <commons.lang3.version>3.3.2</commons.lang3.version>
         <commons.collections4.version>4.0</commons.collections4.version>
         <joda.time.version>2.7</joda.time.version>
+        <mybatis.version>3.3.0</mybatis.version>
+        <mybatis.spring.version>1.2.3</mybatis.spring.version>
     </properties>
     <dependencies>
         <dependency>
@@ -63,6 +65,18 @@
             <artifactId>spring-test</artifactId>
             <version>${org.springframework.version}</version>
             <scope>test</scope>
+        </dependency>
+
+        <!-- mybatis -->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>${mybatis.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+            <version>${mybatis.spring.version}</version>
         </dependency>
 
         <!-- Logging -->

@@ -1,8 +1,11 @@
 package com.mydomain.myproject.controller;
 
 import com.mydomain.myproject.ConfigInfo;
+import com.mydomain.myproject.modal.User;
 import com.mydomain.myproject.service.TestService;
+import com.mydomain.myproject.service.UserService;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -19,6 +22,8 @@ public class HomeController {
     private ConfigInfo configInfo;
     @Resource
     private TestService testService;
+    @Resource
+    private UserService userService;
 
     @RequestMapping({"/home","/"})
     public String home(){
@@ -48,5 +53,11 @@ public class HomeController {
 
     @RequestMapping({"/upload"})
     public void views(){}
+
+    @RequestMapping({"/user/{id}"})
+    @ResponseBody
+    public User getUser(@PathVariable int id){
+        return userService.get(id);
+    }
 
 }
