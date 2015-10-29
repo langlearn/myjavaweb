@@ -8,4 +8,7 @@
         select * from users WHERE id=#{id}
     </select>
 
+    <select id="query" resultType="User">
+        select * from users
+    </select>
 </mapper>

@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * Created by yangjj on 2015/10/29.
@@ -13,4 +14,6 @@ import javax.annotation.Resource;
 @Repository
 public interface UserMapper {
     User getUser(int id);
+
+    List<User> query();
 }
