@@ -1,6 +1,7 @@
 package com.mydomain.myproject.controller;
 
 import com.mydomain.myproject.ConfigInfo;
+import com.mydomain.myproject.service.TestService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -16,6 +17,8 @@ import java.util.Map;
 public class HomeController {
     @Resource
     private ConfigInfo configInfo;
+    @Resource
+    private TestService testService;
 
     @RequestMapping({"/home","/"})
     public String home(){
@@ -35,6 +38,12 @@ public class HomeController {
         result.put("a",1);
         result.put("b",2);
         return result;
+    }
+
+    @RequestMapping({"/json/list"})
+    @ResponseBody
+    public Map<String,Object> list(){
+        return testService.query();
     }
 
 }
