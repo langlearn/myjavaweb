@@ -20,6 +20,7 @@
         <commons.io.version>2.4</commons.io.version>
         <commons.lang3.version>3.3.2</commons.lang3.version>
         <commons.collections4.version>4.0</commons.collections4.version>
+        <joda.time.version>2.7</joda.time.version>
     </properties>
     <dependencies>
         <dependency>
@@ -140,6 +141,11 @@
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
             <version>${commons.io.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>${joda.time.version}</version>
         </dependency>
 
         <!-- Servlet -->
