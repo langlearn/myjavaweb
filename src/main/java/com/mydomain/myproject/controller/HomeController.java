@@ -1,13 +1,16 @@
 package com.mydomain.myproject.controller;
 
 import com.mydomain.myproject.ConfigInfo;
+import com.mydomain.myproject.modal.User;
 import com.mydomain.myproject.service.TestService;
+import com.mydomain.myproject.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -19,6 +22,8 @@ public class HomeController {
     private ConfigInfo configInfo;
     @Resource
     private TestService testService;
+    @Resource
+    private UserService userService;
 
     @RequestMapping({"/home","/"})
     public String home(){
@@ -48,5 +53,11 @@ public class HomeController {
 
     @RequestMapping({"/upload"})
     public void views(){}
+
+    @RequestMapping({"/user/list"})
+    @ResponseBody
+    public List<User> userList(){
+        return userService.queryAll();
+    }
 
 }
