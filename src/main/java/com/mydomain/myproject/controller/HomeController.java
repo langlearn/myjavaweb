@@ -1,5 +1,7 @@
 package com.mydomain.myproject.controller;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageInfo;
 import com.mydomain.myproject.ConfigInfo;
 import com.mydomain.myproject.modal.User;
 import com.mydomain.myproject.service.TestService;
@@ -11,7 +13,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
