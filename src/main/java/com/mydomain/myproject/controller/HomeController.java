@@ -1,8 +1,5 @@
 package com.mydomain.myproject.controller;
 
-import com.github.pagehelper.Page;
-import com.github.pagehelper.PageInfo;
-import com.google.common.collect.ImmutableMap;
 import com.mydomain.myproject.ConfigInfo;
 import com.mydomain.myproject.modal.User;
 import com.mydomain.myproject.service.TestService;
@@ -29,36 +26,35 @@ public class HomeController {
     @Resource
     private UserService userService;
 
-    @RequestMapping({"/home", "/"})
-    public String home() {
+    @RequestMapping({"/home","/"})
+    public String home(){
         return "home";
     }
 
     @RequestMapping({"/config"})
     @ResponseBody
-    public ConfigInfo config() {
+    public ConfigInfo config(){
         return configInfo;
     }
 
     @RequestMapping({"/json/map"})
     @ResponseBody
-    public Map<String, Object> jsonMap() {
-        Map<String, Object> result = new HashMap<String, Object>();
-        result.put("a", 1);
-        result.put("b", 2);
+    public Map<String,Object> jsonMap(){
+        Map<String,Object> result=new HashMap<String, Object>();
+        result.put("a",1);
+        result.put("b",2);
         return result;
     }
 
     @RequestMapping({"/json/list"})
     @ResponseBody
-    public Map<String, Object> list() {
+    public Map<String,Object> list(){
         return testService.query();
     }
 
-    @RequestMapping({"/upload"})
-    public void views() {
-    }
-
+    @RequestMapping({"/upload","/template"})
+    public void views(){}
+    
     @RequestMapping({"/user/{id}"})
     @ResponseBody
     public User getUser(@PathVariable int id) {
@@ -71,5 +67,4 @@ public class HomeController {
         Page<User> page = userService.query();
         return new PageInfo<User>(page);
     }
-
 }
