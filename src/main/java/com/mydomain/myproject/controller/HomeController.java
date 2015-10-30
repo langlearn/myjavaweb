@@ -51,7 +51,7 @@ public class HomeController {
         return testService.query();
     }
 
-    @RequestMapping({"/upload"})
+    @RequestMapping({"/upload","/template"})
     public void views(){}
 
     @RequestMapping({"/user/list"})
