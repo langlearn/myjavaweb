@@ -21,6 +21,7 @@
         <commons.lang3.version>3.3.2</commons.lang3.version>
         <commons.collections4.version>4.0</commons.collections4.version>
         <joda.time.version>2.7</joda.time.version>
+        <sitemesh.version>3.0.1</sitemesh.version>
     </properties>
     <dependencies>
         <dependency>
@@ -146,6 +147,11 @@
             <groupId>joda-time</groupId>
             <artifactId>joda-time</artifactId>
             <version>${joda.time.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.sitemesh</groupId>
+            <artifactId>sitemesh</artifactId>
+            <version>${sitemesh.version}</version>
         </dependency>
 
         <!-- Servlet -->
