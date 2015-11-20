@@ -1,0 +1,3 @@
+<sitemesh>
+    <mapping path="*.do" decorator="/WEB-INF/views/decorator.jsp"/>
+</sitemesh>
